@@ -1,2 +1,5 @@
 # react-master
-react,recoil,typescript
+react
+recoil
+typescript
+styled-component
