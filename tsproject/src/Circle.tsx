@@ -2,22 +2,22 @@ import styled from "styled-components";
 
 interface ContainerProps{
     bgColor:string;
+    borderColor:string;
 }
 
 interface CirccleProps {
     bgColor:string;
+    borderColor?:string;
 }
 
-const Circle = ({bgColor}:CirccleProps) =>{
-    return <Container bgColor={bgColor} />
+const Circle = ({bgColor,borderColor}:CirccleProps) =>{
+    return <Container bgColor={bgColor} borderColor={borderColor ?? "white"} />
 }
 
 interface PlayerShape{
     name:string;
     age:string;
 }
-
-const sayHello = (playerObj:PlayerShape) => `Hello ${playerObj.name} you are ${playerObj.age} years old`;
 
 export default Circle;
 
@@ -26,5 +26,6 @@ const Container = styled.div<ContainerProps>`
     height:200px;
     background-color: ${props=>props.bgColor};
     border-radius: 50%;
+    border:1px solid ${props=>props.borderColor};
 `;
 
