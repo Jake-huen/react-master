@@ -1,12 +1,21 @@
 import styled, { keyframes } from "styled-components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
 function App() {
   return (
-    <Wrapper>
-      <Box>
-        <Emoji>😊</Emoji>
-      </Box>
-      <Title>Hello</Title>
-    </Wrapper>
+    // <Wrapper>
+    //   <Box>
+    //     <Emoji>😊</Emoji>
+    //   </Box>
+    //   <Title>Hello</Title>
+    // </Wrapper>
+    <Router>
+      <Routes>
+        <Route path="/movie/:id" element={<Detail />}></Route>
+        <Route path="/react-master" element={<Home />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
